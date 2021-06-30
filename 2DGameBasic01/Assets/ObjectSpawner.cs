@@ -6,17 +6,18 @@ public class ObjectSpawner : MonoBehaviour
     private int objectSpawnCount = 30;
     [SerializeField]
     private GameObject[] prefabArray;
+    [SerializeField]
+    private Transform[] spawnPointArray;
 
     private void Awake()
     {
         for (int i = 0; i < objectSpawnCount; ++ i)
         {
-            int index = Random.Range(0, prefabArray.Length);
-            float x = Random.Range(-7.5f, 7.5f);    // x 위치
-            float y = Random.Range(-4.5f, 4.5f);    // y 위치
-            Vector3 position = new Vector3(x, y, 0);
+            int prefabIndex = Random.Range(0, prefabArray.Length);
+            int spawnIndex = Random.Range(0, spawnPointArray.Length);
 
-            Instantiate(prefabArray[index], position, Quaternion.identity);
+            Vector3 position = spawnPointArray[spawnIndex].position;
+            GameObject clone = Instantiate(prefabArray[prefabIndex], position, Quaternion.identity);
         }
     }
 }
