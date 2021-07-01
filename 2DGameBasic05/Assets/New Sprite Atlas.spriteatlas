@@ -45,7 +45,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 94e55bef1cccbb1478c2dedbcfe09687, type: 3}
     - {fileID: 2800000, guid: 9cf6a502f96fd7e46ba6722cba4779d3, type: 3}
     - {fileID: 2800000, guid: 95a3fab624c2093488e450e795fd648d, type: 3}
-    totalSpriteSurfaceArea: 1180499
+    totalSpriteSurfaceArea: 1178677
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -62,9 +62,13 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 504f453cc7ef62047823e7864852e647, type: 3}
   - {fileID: 21300000, guid: 0b19474c0cd8ec745891a32d19b467f1, type: 3}
   - {fileID: 21300000, guid: 21cbf22daa3a286439c716ddd935e69e, type: 3}
-  - {fileID: 21300000, guid: 0500435d5c2fdae47b4c010e05be59a1, type: 3}
+  - {fileID: 7226368915143443176, guid: 0500435d5c2fdae47b4c010e05be59a1, type: 3}
+  - {fileID: 3564163816650131253, guid: 0500435d5c2fdae47b4c010e05be59a1, type: 3}
+  - {fileID: -9207324096461601957, guid: 0500435d5c2fdae47b4c010e05be59a1, type: 3}
   - {fileID: 21300000, guid: fadb916d975d960438bd36632f65c17a, type: 3}
-  - {fileID: 21300000, guid: 94e55bef1cccbb1478c2dedbcfe09687, type: 3}
+  - {fileID: -467307283419413426, guid: 94e55bef1cccbb1478c2dedbcfe09687, type: 3}
+  - {fileID: -5258030014049578038, guid: 94e55bef1cccbb1478c2dedbcfe09687, type: 3}
+  - {fileID: 6236088313408774587, guid: 94e55bef1cccbb1478c2dedbcfe09687, type: 3}
   m_PackedSpriteNamesToIndex:
   - IntroBackground
   - Player_Die
@@ -77,9 +81,13 @@ SpriteAtlas:
   - GameOverButtonReturn
   - Meteorite
   - PlayerLifeUI
-  - Enemy_Idle
+  - Enemy_Idle_2
+  - Enemy_Idle_1
+  - Enemy_Idle_0
   - IntroButtonStart
-  - Player_Idle
+  - Player_Idle_0
+  - Player_Idle_1
+  - Player_Idle_2
   m_RenderDataMap: {}
   m_Tag: New Sprite Atlas
   m_IsVariant: 0
