@@ -16,6 +16,10 @@ public class Movement2D : MonoBehaviour
     private bool                isGrounded;         // 바닥 체크 (바닥에 닿아있을 때 true)
     private Vector3             footPosition;       // 발의 위치
 
+    [SerializeField]
+    private int                 maxJumpCount = 2;       // 땅을 밟기 전까지 할 수 있는 최대 점프 횟수
+    private int                 currentJumpCount = 0;   // 현재 가능한 점프 횟수
+
     private void Awake()
     {
         rigid2D = GetComponent<Rigidbody2D>();
@@ -30,6 +34,14 @@ public class Movement2D : MonoBehaviour
         footPosition = new Vector2(bounds.center.x, bounds.min.y);
         // 플레이어의 발 위치에 원을 생성하고, 원이 바닥과 닿아있으면 isGrounded = true
         isGrounded = Physics2D.OverlapCircle(footPosition, 0.1f, groundLayer);
+
+        // 플레이어의 발이 땅에 닿아 있고, y축 속도가 0이하이면 점프 횟수 초기화
+        // velocity.y <= 0을 추가하지 않으면 점프키를 누르는 순간에도 초기화가 되어
+        // 최대 점프 횟수를 2로 설정하면 3번까지 점프가 가능하게 된다.
+        if (isGrounded == true && rigid2D.velocity.y <= 0)
+        {
+            currentJumpCount = maxJumpCount;
+        }
 
         // 낮은 점프, 높은 점프 구현을 위한 중력 계수(gravityScale) 조절 (Jump Up일 때만 적용)
         // 중력 계수가 낮은 if 문은 높은 점프가 되고, 중력 계수가 높은 else 문은 낮은 점프가 된다.
@@ -57,9 +69,13 @@ public class Movement2D : MonoBehaviour
 
     public void Jump()
     {
-        if (isGrounded == true)
+        //if (isGrounded == true)
+        if (currentJumpCount > 0)
         {
+            // jumpForce의 크기만큼 윗쪽 방향으로 속력 설정
             rigid2D.velocity = Vector2.up * jumpForce;
+            // 점프 횟수 1 감소
+            currentJumpCount--;
         }
     }
 
