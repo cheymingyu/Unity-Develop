@@ -21,5 +21,16 @@ public class PlayerController : MonoBehaviour
         {
             movement2D.Jump();
         }
+
+        // 스페이스 키를 누르고 있으면 isLongJump = true
+        if (Input.GetKey(KeyCode.Space))
+        {
+            movement2D.isLongJump = true;
+        }
+        // 스페이스 키를 떼면 isLongJump = false
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            movement2D.isLongJump = false;
+        }
     }
 }
